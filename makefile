@@ -21,18 +21,19 @@ BOLD  = "\033[1m"
 
 #--------------------------------options--------------------------------
 # the extension of the files that will be compiled
-EXTENSION = cpp#don't use "" for extension
+#don't use "" for extension
+EXTENSION = cpp
 # the editor you use (only important if you care about make open)
-EDITOR = "atom"
+# NOTE: ?= command only defines the variable if not yet defined, so calling   \
+        "make version=..." allows you to change the version used without the  \
+        need to edit the makefile. This is true for all variables defined like\
+        this
+EDITOR ?= "emacs"
 # the compiler used
 CC = g++
 # directory for .o and dependency files
 OBJ_DIR = ./bin/
 # version of c++ to use (for deafult c++ define as c++98)
-# NOTE: ?= command only defines the variable if not yet defined, so calling   \
-        "make version=..." allows you to change the version used without the  \
-        need to edit the makefile. This is true for all variables defined like\
-		this
 
 version ?= c++11
 # final name for the executable
@@ -90,10 +91,10 @@ $(OBJ_DIR)%.o: ./%.$(EXTENSION)
 	@$(CC) -c -o $@ $< $(CC_FLAGS)
 
 # NOTE: adds the code in the dependency files to this makefile, causing the   \
-	    CPP_FILES to depend on the included files and be compiled if one is   \
-		changed. the - means this command is silent and will not cause the    \
-		make to stop if it fails (which it will if a file has yet to be       \
-		compiled and does not have a corresponding .d)
+        CPP_FILES to depend on the included files and be compiled if one is   \
+        changed. the - means this command is silent and will not cause the    \
+        make to stop if it fails (which it will if a file has yet to be       \
+        compiled and does not have a corresponding .d)
 -include $(DEP_FILES)
 
 # Creates OBJ_DIR if does not exist yet
@@ -101,15 +102,15 @@ $(OBJ_FILES): | $(OBJ_DIR)
 
 $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
-	@echo $(CYAN) created bin/ $(NOFORM)
+	@echo $(CYAN) created $(OBJ_DIR) $(NOFORM)
 # NOTE: for information on what the | is doing over there:
 # https://www.gnu.org/software/make/manual/make.html#Prerequisite-Types
 
 clean:
-	@echo "" cleaning $(RED)$(notdir $(filter-out ./bin ./%.$(EXTENSION) ./makefile ./%.h,$(wildcard ./*)) $(wildcard ./bin/*)) $(NOFORM)
+	@echo "" cleaning $(RED)  $(notdir $(filter $(EXECUTABLE) $(OBJ_FILES) $(DEP_FILES),$(wildcard ./*) $(wildcard $(OBJ_DIR)*))) $(NOFORM)
 	@rm -rf $(OBJ_DIR)
 	@rm -f $(EXECUTABLE)
 
 open:
 	@echo $(CYAN) opening all files
-	@find . -type f -name '*$(EXTENSION)' -o -name '*h' | xargs $(EDITOR)
+	@find ./ -type f \( -iname \*.$(EXTENSION) -o -iname \*.h \) -exec $(EDITOR) {} + &
