@@ -1,0 +1,57 @@
+[NETWORK]
+label=📡
+full_text= 📡⬇0bits/s ⬆0bits/s
+command=~/.config/i3blocks/network/network_info.py
+interval=6
+
+[DISK_ROOT]
+label=💾
+command=~/.config/i3blocks/disk/root_space.sh
+interval=2
+color=#C9E3DB
+
+[DISK_HOME]
+label=💾
+command=~/.config/i3blocks/disk/home_space.sh
+interval=2
+color=#C9E3DB
+
+[BATTERY]
+command=~/.config/i3blocks/battery/battery_info.sh
+interval=3
+
+[CPU]
+full_text= CPU:  0.00% @ +00.0°C 
+command=~/.config/i3blocks/cpu/cpu_info.sh
+interval=repeat
+color=#00B4EB
+
+[MEM]
+label=🐏
+command=free -h | awk '/Mem:/ { printf("%5s/%s \n", $3, $2) }'
+interval=1
+color=#FEC925
+
+[SOUND_BURST]
+command=~/.config/i3blocks/sound/sound_burst.sh
+interval=once
+
+[SOUND]
+full_text= 🔇:  0% 
+command=~/.config/i3blocks/sound/sound_info.sh
+interval=0
+signal=1
+
+[LUMINOSITY_BURST]
+command=~/.config/i3blocks/luminosity/luminosity_burst.sh
+interval=once
+
+[LUMINOSITY]
+command=~/.config/i3blocks/luminosity/luminosity_info.sh
+interval=0
+signal=2
+
+[TIME_DATE]
+command=~/.config/i3blocks/date/calendar.sh
+interval=1
+
