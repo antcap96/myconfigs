@@ -348,7 +348,7 @@ mode "$mode_gaps_left" {
 }
 
 # bg
-exec_always feh --bg-scale /home/antonio/Pictures/Wallpapers/transistor/transistor-1510774753743-8421.jpg
+exec_always feh --bg-scale /home/antonio/Pictures/Wallpapers/portal/TrYEdLj.jpg
 
 # Multi-screen screenshots with scrot
 bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # All screens
