@@ -377,3 +377,6 @@ for_window [class="Yad"] border pixel 0
 # picom for transparency
 exec_always --no-startup-id picom -b
 
+# sxhkd: custom hotkeys XXX: not working
+exec --no.startup-id sxhkd
+
