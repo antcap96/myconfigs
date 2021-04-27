@@ -1,0 +1,9 @@
+# launching applications
+super + o; w
+	firefox
+
+super + o; d
+	discord
+
+super + o; m
+	spotify
