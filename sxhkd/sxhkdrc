@@ -9,7 +9,13 @@ super + o; d
 super + o; m
 	spotify
 
+super + o; e
+	gvim
+
+super + o; r
+	termite -e ranger
+
 # media control
-super + m; {space, Right, h, Left, l}
+super + m; {space, Right, l, Left, h}
   playerctl -p spotify {play-pause, next, next, previous, previous}
 
