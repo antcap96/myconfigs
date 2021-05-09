@@ -1,3 +1,3 @@
-# hello-world
-Just another repository
-With things
+# MyConfigs
+
+A repository containing some of the configuration files I'm using
