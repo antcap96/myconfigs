@@ -212,7 +212,7 @@ bar {
 # Logout script
 bindsym $mod+p exec ~/.config/i3/bin/logout
 
-# theme?
+# theme (TODO: not sure this does anything)?
 exec --no-startup-id gnome-settings-daemon
 
 # set a border around the windows
@@ -348,7 +348,7 @@ mode "$mode_gaps_left" {
 }
 
 # bg
-exec_always feh --bg-scale /home/antonio/Pictures/Wallpapers/portal/TrYEdLj.jpg
+exec_always feh --bg-scale /home/antonio/.config/wall.png
 
 # Multi-screen screenshots with scrot
 bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # All screens
@@ -367,12 +367,17 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 client.background       #ffffff
 
-# Batery notefications
+# Batery notefications (TODO: doesn't work)
 exec --no-startup-id /home/antonio/Repos/i3-battery-popup/i3-battery-popup -n
 
 # floating windows:
 for_window [class="Yad"] floating enable
 for_window [class="Yad"] border pixel 0
+
+for_window [class="Devbook"] floating enable
+for_window [class="Devbook"] resize set width 60 ppt height 80 ppt
+for_window [class="Devbook"] move position center 
+
 
 # picom for transparency
 exec_always --no-startup-id picom -b
