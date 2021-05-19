@@ -2,7 +2,7 @@
 import json
 import subprocess
 
-x = json.loads(subprocess.check_output(["vnstat", "--json", "-tr"]))
+x = json.loads(subprocess.check_output(["vnstat", "--json", "-tr", "2"]))
 download = x['rx']['ratestring']
 dspeed, dunit = download.split()
 dspeed = float(str(dspeed).replace(",","."))

@@ -2,7 +2,7 @@
 label=📡
 full_text= 📡⬇0bits/s ⬆0bits/s
 command=~/.config/i3blocks/network/network_info.py
-interval=6
+interval=2
 
 [DISK_ROOT]
 label=💾
