@@ -187,26 +187,26 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 5 && pkill -RTMIN+2 i3blocks  #
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5 && pkill -RTMIN+2 i3blocks # decrease screen brightness
 
 
-# i3blocks
-bar {
-    status_command i3blocks
-    position top
-    font pango:Hack, FontAwesome 11
+# # i3blocks
+# bar {
+#     status_command i3blocks
+#     position top
+#     font pango:Hack, FontAwesome 11
 
-    colors {
-        separator #070707
-        background #141414
-        statusline #839496
-	# color class      <border> <background> <text>
-        focused_workspace  #cccccc  #666666      #cccccc
-        active_workspace   #cccccc  #444444      #cccccc
-        inactive_workspace #000000  #888888      #000000
-        urgent_workspace   #d33682  #d33682      #fdf6e3
+#     colors {
+#         separator #070707
+#         background #141414
+#         statusline #839496
+# 	# color class      <border> <background> <text>
+#         focused_workspace  #cccccc  #666666      #cccccc
+#         active_workspace   #cccccc  #444444      #cccccc
+#         inactive_workspace #000000  #888888      #000000
+#         urgent_workspace   #d33682  #d33682      #fdf6e3
 
-        statusline         $white
-        separator          $transparent
-  }
-}
+#         statusline         $white
+#         separator          $transparent
+#   }
+# }
 
 
 # Logout script
@@ -385,3 +385,5 @@ exec_always --no-startup-id picom -b
 # run the things in autostart!
 exec --no-startup-id dex -a -s ~/.config/autostart
 
+# polybar
+exec_always --no-startup-id ~/.config/i3/bin/polybar.sh  &
