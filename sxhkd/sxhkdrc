@@ -10,7 +10,7 @@ super + o; m
 	spotify
 
 super + o; e
-	gvim
+	code
 
 super + o; r
 	termite -e ranger
