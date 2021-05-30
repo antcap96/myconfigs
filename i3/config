@@ -9,6 +9,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+# Mod4 is super key
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -31,11 +32,10 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && pkill -RTMIN+1 i3blocks
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && pkill -RTMIN+1 i3blocks
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -RTMIN+1 i3blocks
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -47,11 +47,11 @@ bindsym $mod+Return exec termite
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+# ebindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
 bindsym $mod+h focus left
@@ -183,31 +183,8 @@ bindsym $mod+r mode "resize"
 
 # Sreen brightness controls
 # enable passwordless sudo for ybacklight. echo "koromicha ALL=NOPASSWD: /usr/bin/ybacklight" > /etc/sudoers.d/ybacklight
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5 && pkill -RTMIN+2 i3blocks  # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5 && pkill -RTMIN+2 i3blocks # decrease screen brightness
-
-
-# # i3blocks
-# bar {
-#     status_command i3blocks
-#     position top
-#     font pango:Hack, FontAwesome 11
-
-#     colors {
-#         separator #070707
-#         background #141414
-#         statusline #839496
-# 	# color class      <border> <background> <text>
-#         focused_workspace  #cccccc  #666666      #cccccc
-#         active_workspace   #cccccc  #444444      #cccccc
-#         inactive_workspace #000000  #888888      #000000
-#         urgent_workspace   #d33682  #d33682      #fdf6e3
-
-#         statusline         $white
-#         separator          $transparent
-#   }
-# }
-
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
 # Logout script
 bindsym $mod+p exec ~/.config/i3/bin/logout
@@ -216,7 +193,7 @@ bindsym $mod+p exec ~/.config/i3/bin/logout
 exec --no-startup-id gnome-settings-daemon
 
 # set a border around the windows
-for_window [class=".*"] border pixel 2
+default_border pixel 2
 # hide border when there is only one window
 hide_edge_borders smart
 
@@ -372,11 +349,11 @@ exec --no-startup-id /home/antonio/Repos/i3-battery-popup/i3-battery-popup -n
 
 # floating windows:
 for_window [class="Yad"] floating enable
-for_window [class="Yad"] border pixel 0
 
 for_window [class="Devbook"] floating enable
 for_window [class="Devbook"] resize set width 60 ppt height 80 ppt
 for_window [class="Devbook"] move position center 
+for_window [class="Devbook"] border pixel 2
 
 
 # picom for transparency
