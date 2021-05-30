@@ -5,38 +5,49 @@ A repository containing some of the configuration files I'm using
 ## The tools I use
 
 ### web browser
-    * firefox
+* [firefox](https://www.mozilla.org/en-US/firefox/)
 
 ### editor
-    * vs code
+* [vs code](https://code.visualstudio.com/)
+  * ms-python.vscode-pylance
+  * dracula-theme.theme-dracula
+  * helixquar.asciidecorator
+  * naumovs.color-highlight
+  * yzhang.markdown-all-in-one
 
 ### video player
-    * mpv
+* [mpv](https://mpv.io/)
 
 ### image viewer
-    * ???
+* sxiv
 
 ### status bar
-    * polybar
+* [polybar](https://github.com/polybar/polybar)
 
 ### system tray
-    * ???
+* nm-applet
 
 ### file manager
-    * nautilus
-    * ranger
+* nautilus
+* ranger
 
 ### notification manager
-    * dunst
+* dunst
 
 ### hotkey manager
-    * sxhkd
+* [sxhkd](https://github.com/baskerville/sxhkd)
 
 ### window manager
-    * i3
+* [i3](https://i3wm.org/)
 
 ### terminal emulator
-    * termite
+* [termite](https://github.com/thestinger/termite)
 
 ### shell
-    * zsh
+* zsh
+
+### screenshots
+* scrot
+
+### app launcher
+* dmenu
