@@ -47,11 +47,11 @@ bindsym $mod+Return exec termite
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-# ebindsym $mod+d exec dmenu_run
+bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
 bindsym $mod+h focus left
@@ -145,7 +145,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -194,6 +194,8 @@ exec --no-startup-id gnome-settings-daemon
 
 # set a border around the windows
 default_border pixel 2
+default_floating_border pixel 2
+
 # hide border when there is only one window
 hide_edge_borders smart
 
@@ -354,6 +356,8 @@ for_window [class="Devbook"] floating enable
 for_window [class="Devbook"] resize set width 60 ppt height 80 ppt
 for_window [class="Devbook"] move position center 
 for_window [class="Devbook"] border pixel 2
+
+for_window [class="megasync"] border none
 
 
 # picom for transparency

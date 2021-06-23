@@ -23,6 +23,7 @@ A repository containing some of the configuration files I'm using
 
 ### status bar
 * [polybar](https://github.com/polybar/polybar)
+  * [system tray over floating window](https://github.com/polybar/polybar/issues/425)
 
 ### system tray
 * nm-applet
