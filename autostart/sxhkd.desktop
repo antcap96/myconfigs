@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=sxhkd
+Comment=Simple X hotkey daemon
+Exec=sxhkd
+Terminal=false
+Hidden=false
+Autostart-enabled=true

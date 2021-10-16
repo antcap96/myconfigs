@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=synapse
+Comment=Application launcher
+Exec=synapse -s
+Terminal=false
+Hidden=false
+Autostart-enabled=true

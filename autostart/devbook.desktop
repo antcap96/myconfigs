@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=devbook
+Comment=devbookstartup script
+Exec=/opt/Devbook/devbook --hidden
+StartupNotify=false
+Terminal=false
