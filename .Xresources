@@ -4,8 +4,14 @@
 
 ! hard contrast: *background: #1d2021
 *background: #282828
+*soft-background: #505050
 ! soft contrast: *background: #32302f
-*foreground: #ebdbb2
+*foreground: #dfdfdf
+*soft-foreground: #666666
+! theme colors
+*primary-color: #663F8C
+*secondary-color: #DAA058
+*alert-color: #bd2c40
 ! Black + DarkGrey
 *color0:  #282828
 *color8:  #928374
@@ -30,6 +36,25 @@
 ! LightGrey + White
 *color7:  #a89984
 *color15: #ebdbb2
+
+!! i3wm
+! Text
+i3wm.brightText: #ffffff
+i3wm.dimText: #888888
+! Color shades 
+! focused
+i3wm.focusedColor: #DAA058
+i3wm.focusedBorderColor: #DBAD74
+i3wm.indicatorColor: #FF9819
+! inactive
+i3wm.inactiveColor: #75552D
+i3wm.inactiveBorderColor: #333333
+! unfocused
+i3wm.unfocusedColor: #222222
+i3wm.unfocusedBorderColor: #333333
+! urgent
+i3wm.urgentBorder: #FF3B55
+i3wm.urgentBorderColor: #FF6F6F
 
 !! URxvt Appearance
 URxvt.font: xft:Bitstream Vera Sans mono:size=10:antialias=true
@@ -79,5 +104,3 @@ URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.urlLauncher: firefox
 URxvt.underlineURLs: true
 URxvt.urlButton: 1
-
-

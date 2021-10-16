@@ -7,15 +7,13 @@
 ;
 ;
 [colors]
-;background = ${xrdb:color0:#222}
-background = #222
-background-alt = #444
-;foreground = ${xrdb:color7:#222}
-foreground = #dfdfdf
-foreground-alt = #666
-primary = #ffb52a
-secondary = #e60053
-alert = #bd2c40
+background = ${xrdb:background:#222}
+background-alt = ${xrdb:light-background:#444}
+foreground = ${xrdb:foreground:#222}
+foreground-alt = ${xrdb:soft-foreground:#666}
+primary = ${xrdb:primary-color:#ffb52a}
+secondary = {xrdb:secondary-color:#e60053}
+alert = ${xrdb:alert-color:#bd2c40}
 color0  = ${xrdb:color0:#222222}
 color1  = ${xrdb:color1:#cc241d}
 color2  = ${xrdb:color2:#98971a}
@@ -71,7 +69,7 @@ font-4 = "iosevka;2"
 font-5 = "Material Design Icons;1"
 
 modules-left = i3
-modules-right = xbacklight pulseaudio updates filesystem memory cpu wlan eth battery temperature date powermenu
+modules-right = xbacklight pulseaudio updates filesystem memory cpu wlan eth battery temperature date
 
 tray-position = right
 tray-padding = 2
@@ -237,6 +235,7 @@ ramp-signal-1 = 󰤟
 ramp-signal-2 = 󰤢
 ramp-signal-3 = 󰤥
 ramp-signal-4 = 󰤨
+ramp-signal-5 = 󰤨
 ramp-signal-foreground = ${colors.foreground-alt}
 
 ;      _   _     
@@ -278,7 +277,7 @@ type = internal/date
 interval = 5
 
 date =
-date-alt = " %Y-%m-%d"
+date-alt = " %e %b %Y"
 
 time = %H:%M
 time-alt = %H:%M:%S
@@ -403,7 +402,7 @@ format-warn-underline = ${self.format-underline}
 
 label = %temperature-c%
 label-warn = %temperature-c%
-label-warn-foreground = ${colors.secondary}
+label-warn-foreground = ${colors.alert}
 
 ; Base temperature for where to start the ramp (in degrees celsius)
 base-temperature = 20
