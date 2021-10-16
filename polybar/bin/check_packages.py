@@ -1,3 +1,5 @@
+#!/usr/bin/env python 
+# update checker for ubuntu
 import subprocess
 
 updates = subprocess.check_output(
