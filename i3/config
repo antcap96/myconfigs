@@ -104,7 +104,7 @@ bindsym $mod+a focus parent
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
-set $ws4 "4: test"
+set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
@@ -199,7 +199,7 @@ hide_edge_borders smart
 # gaps?
 gaps inner 0
 # Only enable gaps on a workspace when there is at least one container
-smart_gaps on
+# smart_gaps on
 
 set $mode_gaps Gaps: (o)uter, (i)nner, (h)orizontal, (v)ertical, (t)op, (r)ight, (b)ottom, (l)eft
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
@@ -362,6 +362,7 @@ exec --no-startup-id /home/antonio/Repos/i3-battery-popup/i3-battery-popup -n
 
 # floating windows:
 for_window [class="Yad"] floating enable
+for_window [class="^Matplotlib$"] floating enable
 
 for_window [class="Devbook"] floating enable
 for_window [class="Devbook"] resize set width 60 ppt height 80 ppt
