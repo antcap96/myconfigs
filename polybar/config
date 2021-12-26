@@ -62,11 +62,8 @@ module-margin-left = 1
 module-margin-right = 2
 
 font-0 = "monospaced:pixelsize=10;1"
-font-1 = "unifont:fontformat=truetype:size=8:antialias=false;0"
-font-2 = "siji:pixelsize=10;1"
-font-3 = "FontAwesome:size=10;1"
-font-4 = "iosevka;2"
-font-5 = "Material Design Icons;1"
+font-1 = "FontAwesome:size=10;1"
+font-2 = "Material Design Icons;1"
 
 modules-left = i3
 modules-right = xbacklight pulseaudio updates filesystem memory cpu wlan eth battery temperature date
