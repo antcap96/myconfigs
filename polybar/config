@@ -461,7 +461,8 @@ menu-2-1-exec = menu-open-0
 [module/updates]
 type = custom/script
 
-exec = /usr/lib/update-notifier/apt-check 2>&1 | sed "s/;/ /g"
+;exec = /usr/lib/update-notifier/apt-check 2>&1 | sed "s/;/ /g"
+exec = $HOME/Documents/myconfigs/polybar/bin/check_packages.py
 
 format = <label>
 format-prefix = "󰏔 "
