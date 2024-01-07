@@ -6,7 +6,8 @@ def manjaro():
     updates = subprocess.run(
         ["/usr/bin/pamac", "checkupdates", "-qa"],
         check=False,
-        stdout=subprocess.PIPE
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE
     ).stdout
     output = updates.decode("ascii")
     return output.count("\n")

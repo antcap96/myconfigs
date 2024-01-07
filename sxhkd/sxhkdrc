@@ -19,3 +19,13 @@ super + o; r
 super + m; {space, Right, l, Left, h}
   playerctl -p spotify {play-pause, next, next, previous, previous}
 
+# dunst
+
+super + alt + space
+	dunstctl close
+
+super + alt + shift + space
+	dunstctl close-all
+
+super + ctrl + h
+	dunstctl history-pop
